@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-client
+spec:
+  selector:
+    matchLabels:
+      run: eureka-client
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: eureka-client
+    spec:
+      containers:
+      - name: eureka-client
+        image: apacpoc.azurecr.io/eureka-client:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8760
