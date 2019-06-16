@@ -20,4 +20,4 @@ spec:
       - name: eureka-client
         image: apacpoc.azurecr.io/eureka-client:0.0.1-SNAPSHOT
         ports:
-        - containerPort: 8760
+        - containerPort: 8080
