@@ -2,7 +2,7 @@ FROM java:8
 
 MAINTAINER Lin
 
-ADD eureka-client-0.0.1-SNAPSHOT.jar app.jar
+ADD eureka-client.jar app.jar
 
 EXPOSE 8080
 
