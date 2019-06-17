@@ -1,6 +1,13 @@
 spring:
   application:
-    name: a-bootiful-client
+    name: eureka-client
   profiles:
     active:
       - prd
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
