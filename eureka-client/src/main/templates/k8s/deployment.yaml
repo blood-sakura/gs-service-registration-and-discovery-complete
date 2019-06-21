@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eureka-service
+  name: ${artifactName}
 spec:
   selector:
     matchLabels:
-      run: eureka-service
-  replicas: 1
+      run: ${artifactName}
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -14,11 +14,11 @@ spec:
   template:
     metadata:
       labels:
-        run: eureka-service
+        run: ${artifactName}
     spec:
       containers:
-      - name: eureka-service
-        image: apacpoc.azurecr.io/eureka-service:0.0.1-SNAPSHOT
+      - name: ${artifactName}
+        image: apacpoc.azurecr.io/${artifactName}:${dockerImgVer}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8761
+        - containerPort: 8080
